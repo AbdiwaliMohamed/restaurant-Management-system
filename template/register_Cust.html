@@ -1,0 +1,32 @@
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" action="#!" ng-submit="customers.push({number:a,name:b,phone:c,id_card:d,img:e,addr:f});a='';b='';c='';d='';e='',f=''">
+
+    <p class="h4 mb-4">Register New Customer</p>
+
+    <!-- Name -->
+    <input type="number" id="de" class="form-control mb-4" placeholder="Customer Number" ng-model="a">
+    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Full Name" ng-model="b">
+    <!-- Email -->
+    <input type="number" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Phone Number" ng-model="c">
+    <input type="number" id="" class="form-control mb-4" placeholder="ID Card" ng-model="d">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                   aria-describedby="inputGroupFileAddon01" mds-file file="img" base64="r" ng-model="e">
+            <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Address" ng-model="f"></textarea>
+    </div>
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit" ng-click="$event.preventDefault();">Register Now</button>
+
+</form>
+<!-- Default form contact -->
