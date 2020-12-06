@@ -1,48 +1,3 @@
-<div style="font-size: 20px;border: solid 1px black" class="uk-container">
-    <form class="uk-form-stacked">
-        <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-select" style="text-align: center;font-weight: bold;font-size: 30px">Select Customer Name</label>
-            <div class="uk-form-controls">
-                <select class="uk-select" id="form-stacked-select">
-                    <option>Abdiwali Mohamed</option>
-                    <option>Ali Abdallah</option>
-                    <option>Mohamed Jamac</option>
-                    <option>Ahmed nor</option>
-                </select>
-            </div>
-        </div>
-    </form>
-    <div class="uk-overflow-auto">
-        <table class="uk-table uk-table-small uk-table-divider">
-            <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
-            <tr>
-                <th>Number</th>
-                <th>Full Name</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>ID Card Number</th>
-                <th>Total Price</th>
-                <th>Image</th>
-
-            </tr>
-            </thead>
-            <tbody ng-repeat="cust in customers">
-            <tr>
-
-                <td>{{cust.number}}</td>
-                <td>{{cust.name}}</td>
-                <td>{{cust.phone}}</td>
-                <td>{{cust.addr}}</td>
-                <td>{{cust.id_card}}</td>
-                <td><span class="uk-badge" style="width: 100px">SDG: 50000</span></td>
-                <td><img ng-src="{{cust.img}}" style="width: 20%"></td>
-
-            </tr>
-
-            </tbody>
-        </table>
-    </div>
-</div><!-- Default form contact -->
 <form class="text-center border border-light p-5"  ng-submit="customers.push({number:a,name:b,phone:c,id_card:d,img:e,addr:f});a='';b='';c='';d='';e='';f=''">
 
     <p class="h4 mb-4">Register New Customer</p>
@@ -70,7 +25,7 @@
 
 
     <!-- Send button -->
-    <button class="btn btn-info btn-block" type="submit" ng-click="$event.preventDefault();">Register Now</button>
+    <button class="btn btn-info btn-block" type="submit" ng-click="$event.PreventDefault();">Register Now</button>
 
 </form>
 <!-- Default form contact -->

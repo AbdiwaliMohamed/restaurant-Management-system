@@ -21,7 +21,7 @@
                 <h5 class="card-title" style="display: inline;"> <span class="uk-badge">{{meal.price}}</span></h5>
 
                 <!-- Button -->
-                <a href="#" class="btn " style="width: 100%;padding: 10px;background-color: #f1bb15">Buy Now</a>
+                <button  ng-click="$event.PreventDefault(); buy()" class="btn " style="width: 100%;padding: 10px;background-color: #f1bb15">Buy Now</button>
 
             </div>
 

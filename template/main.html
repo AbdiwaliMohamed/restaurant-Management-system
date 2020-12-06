@@ -71,7 +71,77 @@
                                     Account
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a> <i   class="fas fa-shopping-cart fa-lg white-text pr-3" style="margin-top: 15px;margin-left: 50px;" data-toggle="modal" data-target="#fullHeightModalTop"></i>
+                                </a>
+                            </li>
 
+                            <div class="modal fade right" id="fullHeightModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                 aria-hidden="true">
+
+                                <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+                                <div class="modal-dialog modal-full-height modal-top" role="document">
+
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title w-100" id="myModalLabel" style="text-align:center">Ordering part</h1>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-xs-3">
+                                                    Name
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Quantity
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Price
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Sub Total
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Total
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Image
+                                                </div>
+                                            </div>
+                                            <div class="row" ng-repeat="item in basket" >
+                                                <div class="col-lg-2  col-xs-3" style="margin-top: 20px">
+                                                    {{item.name}}
+                                                </div>
+                                                <div class="col-lg-2 col-xs-3" style="margin-top: 20px">
+                                                    <button class="btn btn-danger btn-sm" ng-click="item.qty=item.qty-1">-</button>
+                                                    {{item.qty}}
+                                                    <button class="btn btn-success btn-sm" ng-click="item.qty=item.qty+1">+</button>
+                                                </div>
+                                                <div class="col-lg-2 col-xs-3" style="margin-top: 20px;">
+                                                    {{item.price}}
+                                                </div>
+                                                <div class="col-lg-2 col-xs-3" style="margin-top: 20px;">
+                                                    Sub total
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Total
+                                                </div>
+                                                <div class="col-lg-2 col-xs-3">
+                                                    <img src="{{item.img}}" style="width: 100%; height:100%" alt=" " class="img-responsive invert-image" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Full Height Modal Right -->
                             <!-- Modal -->
                         </ul>
                         <!-- Links -->

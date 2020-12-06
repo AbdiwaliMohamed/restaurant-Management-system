@@ -32,6 +32,9 @@ angular.module("myApp")
         {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"}
 
     ]
+    $scope.buy=function () {
+
+    }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {
 
