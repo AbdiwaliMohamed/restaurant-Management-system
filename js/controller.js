@@ -32,8 +32,21 @@ angular.module("myApp")
         {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"}
 
     ]
-    $scope.buy=function () {
+    $scope.basket=[];
+    $scope.buy=function (meal) {
+        var x = prompt("Enter the quantity of " + meal.name)
+        if (x) {
+            x = parseFloat(x)
+           $scope.basket.push({
+                name: meal.name,
+                price: meal.price,
+                qty: x,
+                img: meal.img
 
+        })
+            swal("Added To Cart", "", "success")
+
+        }
     }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {

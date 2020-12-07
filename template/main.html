@@ -49,7 +49,7 @@
                             </li>
                             <li class="nav-item"  >
                                 <a class="nav-link" ui-sref="app.rest">
-                                    <span class="fas fa-product-hunt"></span>
+                                    <span class="fas fa-hamburger"></span>
                                     Meals
                                 </a>
                             </li>
@@ -84,14 +84,16 @@
 
 
                                     <div class="modal-content">
-                                        <div class="modal-header">
+                                        <div class="modal-header" style="background-color: #00c300">
                                             <h1 class="modal-title w-100" id="myModalLabel" style="text-align:center">Ordering part</h1>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true"></span>
                                             </button>
+                                            <button type="button" class="btn " data-dismiss="modal" style="color: black;font-size: 30px">Close</button>
+
                                         </div>
                                         <div class="modal-body">
-                                            <div class="row">
+                                            <div class="row" style="color: tomato">
                                                 <div class="col-lg-2 col-xs-3">
                                                     Name
                                                 </div>
@@ -104,13 +106,15 @@
                                                 <div class="col-xs-3 col-lg-2">
                                                     Sub Total
                                                 </div>
-                                                <div class="col-xs-3 col-lg-2">
-                                                    Total
-                                                </div>
+
                                                 <div class="col-xs-3 col-lg-2">
                                                     Image
                                                 </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    Delete
+                                                </div>
                                             </div>
+                                            <hr>
                                             <div class="row" ng-repeat="item in basket" >
                                                 <div class="col-lg-2  col-xs-3" style="margin-top: 20px">
                                                     {{item.name}}
@@ -124,18 +128,19 @@
                                                     {{item.price}}
                                                 </div>
                                                 <div class="col-lg-2 col-xs-3" style="margin-top: 20px;">
-                                                    Sub total
-                                                </div>
-                                                <div class="col-xs-3 col-lg-2">
-                                                    Total
+                                                    {{item.price*item.qty}}
                                                 </div>
                                                 <div class="col-lg-2 col-xs-3">
-                                                    <img src="{{item.img}}" style="width: 100%; height:100%" alt=" " class="img-responsive invert-image" />
+                                                    <img ng-src="{{item.img}}" style="width: 80%; height:70%" alt=" " class="img-responsive invert-image" />
+                                                </div>
+                                                <div class="col-xs-3 col-lg-2">
+                                                    <a ng-click="delete()">
+                                                        <i class="fa fa-trash" aria-hidden="true" style="color: red;text-align: center;margin-left: 20px;font-size: 40px"></i>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="button" class="btn btn-primary">Checkout</button>
                                         </div>
                                     </div>
@@ -157,7 +162,7 @@
 
 
     </div>
-    <div class="col-10">
+    <div class="col-10" style="margin-left: -10px">
         <section class="" style="margin-top:0px;">
             <div ui-view="sub"></div>
         </section>
