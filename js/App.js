@@ -1,4 +1,4 @@
-angular.module("myApp",["ngMaterial","ui.router","mds"])
+angular.module("myApp",["ngMaterial","ui.router","mds","ngAnimate"])
     .config(function ($stateProvider,$urlRouterProvider) {
         $stateProvider
             .state("app",{
@@ -59,7 +59,19 @@ angular.module("myApp",["ngMaterial","ui.router","mds"])
         $urlRouterProvider.otherwise("/app/home")
     })
 
+    .filter("totalFilter",function ($rootScope) {
+        return function (bascket) {
+            console.log("Hi")
+            $rootScope.total = 0
 
+            bascket.forEach(function (item) {
+                $rootScope.total += item.qty * item.price
+            })
+
+
+            return bascket
+        }
+    })
 
 
 

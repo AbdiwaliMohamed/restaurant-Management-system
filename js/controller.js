@@ -33,9 +33,11 @@ angular.module("myApp")
 
     ]
     $scope.basket=[];
+    $scope.books=[
+    ];
     $scope.buy=function (meal) {
         var x = prompt("Enter the quantity of " + meal.name)
-        if (x) {
+        if (x>=1) {
             x = parseFloat(x)
            $scope.basket.push({
                 name: meal.name,
@@ -47,6 +49,25 @@ angular.module("myApp")
             swal("Added To Cart", "", "success")
 
         }
+    }
+    $scope.addBook=function (meal) {
+        var y = prompt("Enter the quantity of " + meal.name)
+        if (y) {
+            y = parseFloat(y)
+            $scope.books.push({
+                name: meal.name,
+                price: meal.price,
+                qty: y,
+                img: meal.img
+
+            })
+            swal("Added To Cart", "", "success")
+
+        }
+    }
+
+        $scope.delete=function () {
+
     }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {
@@ -63,3 +84,5 @@ angular.module("myApp")
 
 
 })
+
+

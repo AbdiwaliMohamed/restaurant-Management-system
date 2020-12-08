@@ -89,7 +89,7 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true"></span>
                                             </button>
-                                            <button type="button" class="btn " data-dismiss="modal" style="color: black;font-size: 30px">Close</button>
+                                            <button type="button" class="btn " data-dismiss="modal" style="color: black;font-size: 25px">Close</button>
 
                                         </div>
                                         <div class="modal-body">
@@ -115,7 +115,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <div class="row" ng-repeat="item in basket" >
+                                            <div class="row" ng-repeat="item in basket |totalFilter" >
                                                 <div class="col-lg-2  col-xs-3" style="margin-top: 20px">
                                                     {{item.name}}
                                                 </div>
@@ -139,9 +139,18 @@
                                                     </a>
                                                 </div>
                                             </div>
+                                            <div style="background-color: #f1bb15; padding: 15px;width: 100%">
+                                            <h1 style="display: inline; text-align:left;font-size:30px;padding: 20px">
+                                                Total:
+                                            </h1>
+                                                <P style="display: inline;margin-left: 70%;">SDG:<span class="uk-badge" style="font-size: 30px;padding: 20px;margin-right: 20px;">{{total}}</span></P>
+                                            </div>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary">Checkout</button>
+                                            <button type="button" class="btn btn-info" ng-click="addBook(meal)">Add to Customer book</button>
+
                                         </div>
                                     </div>
                                 </div>
