@@ -32,8 +32,9 @@ angular.module("myApp")
         {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"}
 
     ]
-    $scope.basket=[];
+   $scope.basket=[];
     $scope.books=[
+       {name:"Ali",number:35,order_price:77,date:"12/12/1990",total:5000}
     ];
     $scope.buy=function (meal) {
         var x = prompt("Enter the quantity of " + meal.name)
@@ -50,25 +51,31 @@ angular.module("myApp")
 
         }
     }
-    $scope.addBook=function (meal) {
-        var y = prompt("Enter the quantity of " + meal.name)
-        if (y) {
-            y = parseFloat(y)
-            $scope.books.push({
-                name: meal.name,
-                price: meal.price,
-                qty: y,
-                img: meal.img
+    $scope.addBook=function (order) {
+        var x= prompt("Enter the number of Customer")
+        if (x==$scope.customers[0].number ||x==$scope.customers[1].number) {
 
+            x = parseFloat(x)
+            $scope.books.push({
+                 number: x,
+                name:$scope.customers[0].name,
+                 order_price:$scope.basket[0].price,
+                total:$scope.basket[0].price*$scope.basket[0].qty
             })
-            swal("Added To Cart", "", "success")
+            swal("Added To Customer Book", "", "success")
+
+        }
+        else {
+            swal("not your customers", "", "info")
 
         }
     }
 
         $scope.delete=function () {
+            $scope.basket.splice(0)
+            swal("deleted", "", "success")
 
-    }
+        }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {
 
