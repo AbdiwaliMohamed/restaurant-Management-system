@@ -28,8 +28,9 @@ angular.module("myApp")
 
     ];
     $scope.customers=[
+        {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
+        {number:80,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
         {number:40,name:"Abdiwali",phone:0127638689,id_card:633663,img:"img/male.jpg",addr:"khartoum"},
-        {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"}
 
     ]
    $scope.basket=[];
@@ -57,25 +58,27 @@ angular.module("myApp")
     }
     $scope.addBook=function (item) {
         var x= prompt("Enter the number of Customer")
-        if (x==$scope.customers[0].number ||x==$scope.customers[1].number) {
+        $scope.customers.forEach(function (num) {
+            if (num.number==x) {
+              x = parseFloat(x)
+                $scope.books.push({
+                    number: x,
+                    name:$scope.customers[0].name,
+                    order_price:$scope.basket[0].price,
+                    total:$scope.basket[0].price*$scope.basket[0].qty
+                })
+                $scope.basket=[]
+                $scope.modal="modal"
+                swal("Added To Customer Book", "", "success")
 
-            x = parseFloat(x)
-            $scope.books.push({
-                 number: x,
-                name:$scope.customers[0].name,
-                 order_price:$scope.basket[0].price,
-                total:$scope.basket[0].price*$scope.basket[0].qty
-            })
-            $scope.basket=[]
-            $scope.modal="modal"
-            swal("Added To Customer Book", "", "success")
+            }
+            else {
+                $scope.modal=""
+                swal("not your customers", "", "info")
 
-        }
-        else {
-            $scope.modal=""
-            swal("not your customers", "", "info")
+            }
+        })
 
-        }
     }
 
         $scope.delete=function (index) {
@@ -83,11 +86,11 @@ angular.module("myApp")
             swal("deleted", "", "success");
          $scope.$apply()
         }
-    $scope.custName;
-$scope.searchedbook = [];
-    $scope.bookChanged = function(){
-        $scope.searchedbook = $scope.books.filter(x=>x.Name==$scope.custName.trim());
-    }
+//     $scope.custName;
+// $scope.searchedbook = [];
+//     $scope.bookChanged = function(){
+//         $scope.searchedbook = $scope.books.filter(x=>x.name==$scope.custName.trim());
+//     }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {
 

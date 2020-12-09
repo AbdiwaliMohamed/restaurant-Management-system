@@ -5,33 +5,34 @@
         <div class="uk-form-controls">
             <select class="uk-select" id="form-stacked-select" ng-model="custName" ng-change="bookChanged()" >
                 <option  ng-repeat="book in books">{{book.name}}</option>
-                <div class="uk-overflow-auto">
-                    <table class="uk-table uk-table-small uk-table-divider">
-                        <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
-                        <tr>
-                            <th>Number</th>
-                            <th>Full Name</th>
-                            <th>Order Date</th>
-                            <th>Order Price</th>
-                            <th>Total</th>
-                        </tr>
-                        </thead>
-                        <tbody ng-repeat="order in books">
-                        <tr>
-
-                            <td>{{searchedbook[0].number}}</td>
-                            <td>{{searchedbook[0].number}}</td>
-                            <td>{{searchedbook[0].number}}</td>
-                            <td><span class="uk-badge" style="width: 100px">{{searchedbook[0].number}}</span></td>
-                            <td><span class="uk-badge" style="width: 100px">{{searchedbook[0].number}}</span></td>
-
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
 
             </select>
+          <!--  <div class="uk-overflow-auto" style="">
+                <table class="uk-table uk-table-small uk-table-divider">
+                    <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
+                    <tr>
+                        <th>Number</th>
+                        <th>Full Name</th>
+                        <th>Order Date</th>
+                        <th>Order Price</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+
+                        <td>{{searchedbook[0].number}}</td>
+                        <td>{{searchedbook[0].name}}</td>
+                        <td>{{searchedbook[0].total}}</td>
+                        <td><span class="uk-badge" style="width: 100px">{{searchedbook[1].number}}</span></td>
+                        <td><span class="uk-badge" style="width: 100px">{{searchedbook[1].number}}</span></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+-->
         </div>
     </div>
 </form>
