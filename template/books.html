@@ -1,18 +1,41 @@
 <div style="font-size: 20px;border: solid 1px black" class="">
-<!--<form class="uk-form-stacked">
+<form class="uk-form-stacked">
  <div class="uk-margin">
         <label class="uk-form-label" for="form-stacked-select" style="text-align: center;font-weight: bold;font-size: 30px">Select Customer Name</label>
         <div class="uk-form-controls">
-            <select class="uk-select" id="form-stacked-select">
-                <option>Abdiwali Mohamed</option>
-                <option>Ali Abdallah</option>
-                <option>Mohamed Jamac</option>
-                <option>Ahmed nor</option>
+            <select class="uk-select" id="form-stacked-select" ng-model="custName" ng-change="bookChanged()" >
+                <option  ng-repeat="book in books">{{book.name}}</option>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
+                        <tr>
+                            <th>Number</th>
+                            <th>Full Name</th>
+                            <th>Order Date</th>
+                            <th>Order Price</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody ng-repeat="order in books">
+                        <tr>
+
+                            <td>{{searchedbook[0].number}}</td>
+                            <td>{{searchedbook[0].number}}</td>
+                            <td>{{searchedbook[0].number}}</td>
+                            <td><span class="uk-badge" style="width: 100px">{{searchedbook[0].number}}</span></td>
+                            <td><span class="uk-badge" style="width: 100px">{{searchedbook[0].number}}</span></td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
             </select>
         </div>
     </div>
 </form>
--->
+
 <div class="uk-overflow-auto">
     <table class="uk-table uk-table-small uk-table-divider">
         <thead  style="background-color: #eeeeee;color: black; font-weight: bold">

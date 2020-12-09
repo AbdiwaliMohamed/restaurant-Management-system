@@ -134,7 +134,7 @@
                                                     <img ng-src="{{item.img}}" style="width: 80%; height:70%" alt=" " class="img-responsive invert-image" />
                                                 </div>
                                                 <div class="col-xs-3 col-lg-2">
-                                                    <a ng-click="delete()">
+                                                    <a ng-click="delete($index)">
                                                         <i class="fa fa-trash" aria-hidden="true" style="color: red;text-align: center;margin-left: 20px;font-size: 40px"></i>
                                                     </a>
                                                 </div>
@@ -149,7 +149,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary">Print</button>
-                                            <button type="button" class="btn btn-info" ng-click="addBook(item)">Add to Customer book</button>
+                                            <button type="button" class="btn btn-info" ng-click="addBook(item)" ng-init="modal='modal'" data-dismiss="{{modal}}">Add to Customer book</button>
 
                                         </div>
                                     </div>

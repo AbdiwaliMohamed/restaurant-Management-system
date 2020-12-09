@@ -50,8 +50,12 @@ angular.module("myApp")
             swal("Added To Cart", "", "success")
 
         }
+        else {
+            swal("Please Enter the quantity of Order", "", "info")
+
+        }
     }
-    $scope.addBook=function (order) {
+    $scope.addBook=function (item) {
         var x= prompt("Enter the number of Customer")
         if (x==$scope.customers[0].number ||x==$scope.customers[1].number) {
 
@@ -62,20 +66,28 @@ angular.module("myApp")
                  order_price:$scope.basket[0].price,
                 total:$scope.basket[0].price*$scope.basket[0].qty
             })
+            $scope.basket=[]
+            $scope.modal="modal"
             swal("Added To Customer Book", "", "success")
 
         }
         else {
+            $scope.modal=""
             swal("not your customers", "", "info")
 
         }
     }
 
-        $scope.delete=function () {
-            $scope.basket.splice(0)
-            swal("deleted", "", "success")
-
+        $scope.delete=function (index) {
+          $scope.basket.splice(index,1)
+            swal("deleted", "", "success");
+         $scope.$apply()
         }
+    $scope.custName;
+$scope.searchedbook = [];
+    $scope.bookChanged = function(){
+        $scope.searchedbook = $scope.books.filter(x=>x.Name==$scope.custName.trim());
+    }
 })
     .controller("booksCtrl",function ($scope,$rootScope) {
 
