@@ -3,11 +3,11 @@
  <div class="uk-margin">
         <label class="uk-form-label" for="form-stacked-select" style="text-align: center;font-weight: bold;font-size: 30px">Select Customer Name</label>
         <div class="uk-form-controls">
-            <select class="uk-select" id="form-stacked-select" ng-model="custName" ng-change="bookChanged()" >
+            <select class="uk-select" id="form-stacked-select" ng-model="custName" ng-change="CustChanged()" >
                 <option  ng-repeat="book in books">{{book.name}}</option>
 
             </select>
-          <!--  <div class="uk-overflow-auto" style="">
+          <div class="uk-overflow-auto" style="">
                 <table class="uk-table uk-table-small uk-table-divider">
                     <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
                     <tr>
@@ -21,18 +21,18 @@
                     <tbody>
                     <tr>
 
-                        <td>{{searchedbook[0].number}}</td>
-                        <td>{{searchedbook[0].name}}</td>
-                        <td>{{searchedbook[0].total}}</td>
-                        <td><span class="uk-badge" style="width: 100px">{{searchedbook[1].number}}</span></td>
-                        <td><span class="uk-badge" style="width: 100px">{{searchedbook[1].number}}</span></td>
+                        <td>{{book[0].number}}</td>
+                        <td>{{books[0].name}}</td>
+                        <td>{{books[0].total}}</td>
+                        <td><span class="uk-badge" style="width: 100px">{{books[0].number}}</span></td>
+                        <td><span class="uk-badge" style="width: 100px">{{books[0].number}}</span></td>
 
                     </tr>
 
                     </tbody>
                 </table>
             </div>
--->
+
         </div>
     </div>
 </form>

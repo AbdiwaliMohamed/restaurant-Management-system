@@ -37,7 +37,7 @@ angular.module("myApp")
     ]
    $scope.basket=[];
     $scope.books=[
-       {name:"Ali",number:35,order_price:77,date:"12/12/1990",total:5000}
+       {name:"Ahmed nor ahmed",number:35,order_price:77,date:"12/12/1990",total:5000}
     ];
     $scope.buy=function (meal) {
         var x = prompt("Enter the quantity of " + meal.name)
@@ -79,6 +79,9 @@ angular.module("myApp")
             }
         })
 
+    }
+    $scope.CustChanged = function(){
+        $scope.books = $scope.books.filter(x=>x.Name==$scope.books.trim())
     }
 
         $scope.delete=function (index) {

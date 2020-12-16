@@ -4,10 +4,8 @@
             <label class="uk-form-label" for="form-stacked-select" style="text-align: center;font-weight: bold;font-size: 30px">Select Customer Name</label>
             <div class="uk-form-controls">
                 <select class="uk-select" id="form-stacked-select">
-                    <option>Abdiwali Mohamed</option>
-                    <option>Ali Abdallah</option>
-                    <option>Mohamed Jamac</option>
-                    <option>Ahmed nor</option>
+                    <option ng-repeat="cust in customers">{{cust.name}}</option>
+
                 </select>
             </div>
         </div>
