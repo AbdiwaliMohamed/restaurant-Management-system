@@ -61,7 +61,6 @@ angular.module("myApp",["ngMaterial","ui.router","mds","ngAnimate"])
 
     .filter("totalFilter",function ($rootScope) {
         return function (bascket) {
-            console.log("Hi")
             $rootScope.total = 0
 
             bascket.forEach(function (item) {

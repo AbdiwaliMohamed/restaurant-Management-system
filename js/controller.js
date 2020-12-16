@@ -60,7 +60,7 @@ angular.module("myApp")
     }
     $scope.addBook=function (item) {
         $scope.customers.forEach(function (num) {
-            if (num.number==num.number) {
+            if ($scope.adding==num.number) {
                 $scope.books.push({
                     number: num.number,
                     name:$scope.customers[0].name,
@@ -69,6 +69,7 @@ angular.module("myApp")
                 })
                 $scope.basket=[]
                 $scope.modal="modal"
+                //$scope.disp=""
                 swal("Added To Customer Book", "", "success")
 
             }
