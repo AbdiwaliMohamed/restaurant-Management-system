@@ -148,9 +148,24 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Print</button>
-                                            <button type="button" class="btn btn-info" ng-click="addBook(item)" ng-init="modal='modal'" data-dismiss="{{modal}}">Add to Customer book</button>
+                                           <form style="width: 100%">
+                                               <div class="row" >
+                                                   <div class="col-lg-6" style="background-color: #00c300">
+                                                       <h1 style="margin-right: 50%;font-size: 33px;font-weight: bold">Choose Customer</h1>
+                                                       <select class="browser-default custom-select"  >
+                                                           <option selected> Choose Now</option>
+                                                        <option value="1" ng-repeat="cust in customers">{{cust.number}} {{cust.name}}</option>
 
+                                                       </select>
+                                                       <input type="submit" value="Print and Add to Customer book"  ng-init="modal='modal'" data-dismiss="{{modal}}" ng-click="addBook(item)" style="background-color: #0b51c5" >
+                                                   </div>
+                                                   <div class="col-lg-6" style="background-color: yellow">
+                                                       <h1 style=";font-size: 33px;font-weight: bold; margin-left: 40%">Other Customer</h1>
+                                                       <button type="button" class="btn btn-primary" style="margin-left: 40%;">Print the customer Order</button>
+
+                                                   </div>
+                                               </div>
+                                           </form>
                                         </div>
                                     </div>
                                 </div>

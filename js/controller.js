@@ -28,9 +28,11 @@ angular.module("myApp")
 
     ];
     $scope.customers=[
-        {number:70,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
-        {number:80,name:"Abdallah",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
-        {number:40,name:"Abdiwali",phone:0127638689,id_card:633663,img:"img/male.jpg",addr:"khartoum"},
+        {number:40,name:"Abdiwali mohamed mursal",phone:0127638689,id_card:633663,img:"img/male.jpg",addr:"khartoum"},
+        {number:70,name:"Abdallah mohamed Ali",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
+        {number:80,name:"Mohamed Jamac nor",phone:0133762762,id_card:737223,img:"img/male.png",addr:"mogadishu"},
+        {number:45,name:"Omar ali farah",phone:0127638689,id_card:633663,img:"img/male.jpg",addr:"khartoum"},
+        {number:55,name:"Ahmed nor ahmed",phone:0127638689,id_card:633663,img:"img/male.jpg",addr:"khartoum"},
 
     ]
    $scope.basket=[];
@@ -57,12 +59,10 @@ angular.module("myApp")
         }
     }
     $scope.addBook=function (item) {
-        var x= prompt("Enter the number of Customer")
         $scope.customers.forEach(function (num) {
-            if (num.number==x) {
-              x = parseFloat(x)
+            if (num.number==num.number) {
                 $scope.books.push({
-                    number: x,
+                    number: num.number,
                     name:$scope.customers[0].name,
                     order_price:$scope.basket[0].price,
                     total:$scope.basket[0].price*$scope.basket[0].qty
