@@ -69,7 +69,7 @@ angular.module("myApp")
                 })
                 $scope.basket=[]
                 $scope.modal="modal"
-                //$scope.disp=""
+                  $scope.disp=""
                 swal("Added To Customer Book", "", "success")
 
             }
