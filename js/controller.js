@@ -41,45 +41,48 @@ angular.module("myApp")
     ];
     $scope.buy=function (meal) {
         var x = prompt("Enter the quantity of " + meal.name)
-        if (x>=1) {
+        if (x >= 1) {
             x = parseFloat(x)
-           $scope.basket.push({
+            $scope.basket.push({
                 name: meal.name,
                 price: meal.price,
                 qty: x,
                 img: meal.img
 
-        })
+            })
             swal("Added To Cart", "", "success")
 
+            $scope.addBook = function (item) {
+                $scope.customers.forEach(function (num) {
+                    if (num.number) {
+                        $scope.books.push({
+                            number: $scope.customers[1].number,
+                            name: $scope.customers[1].name,
+                            order_price:meal.price,
+                            total: $scope.basket[0].price * $scope.basket[0].qty
+                        })
+                        $scope.basket = []
+                        $scope.modal = "modal"
+                        $scope.disp = ""
+                        swal("Added To Customer Book", "", "success")
+
+                    }
+
+                    else {
+                        $scope.modal = ""
+                        swal("not your customers", "", "info")
+
+                    }
+                })
+            }
+
         }
-        else {
+
+    else
+        {
             swal("Please Enter the quantity of Order", "", "info")
 
         }
-    }
-    $scope.addBook=function (item) {
-        $scope.customers.forEach(function (num) {
-            if ($scope.adding==num.number) {
-                $scope.books.push({
-                    number: num.number,
-                    name:$scope.customers[0].name,
-                    order_price:$scope.basket[0].price,
-                    total:$scope.basket[0].price*$scope.basket[0].qty
-                })
-                $scope.basket=[]
-                $scope.modal="modal"
-                  $scope.disp=""
-                swal("Added To Customer Book", "", "success")
-
-            }
-            else {
-                $scope.modal=""
-                swal("not your customers", "", "info")
-
-            }
-        })
-
     }
     $scope.CustChanged = function(){
         $scope.books = $scope.books.filter(x=>x.Name==$scope.books.trim())

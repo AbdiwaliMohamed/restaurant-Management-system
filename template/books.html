@@ -4,10 +4,10 @@
         <label class="uk-form-label" for="form-stacked-select" style="text-align: center;font-weight: bold;font-size: 30px">Select Customer Name</label>
         <div class="uk-form-controls">
             <select class="uk-select" id="form-stacked-select" ng-model="custName" ng-change="CustChanged()" >
-                <option  ng-repeat="book in books">{{book.name}}</option>
+                <option  ng-repeat="cust in customers">{{cust.name}}</option>
 
             </select>
-          <div class="uk-overflow-auto" style="">
+         <!--<div class="uk-overflow-auto" style="">
                 <table class="uk-table uk-table-small uk-table-divider">
                     <thead  style="background-color: #eeeeee;color: black; font-weight: bold">
                     <tr>
@@ -32,7 +32,7 @@
                     </tbody>
                 </table>
             </div>
-
+-->
         </div>
     </div>
 </form>

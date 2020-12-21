@@ -154,7 +154,7 @@
                                                        <h1 style="margin-right: 50%;font-size: 33px;font-weight: bold">Choose Customer</h1>
                                                        <select class="browser-default custom-select"  >
                                                            <option selected> Choose Now</option>
-                                                        <option class="{{disp}}" value="1" ng-repeat="cust in customers">{{cust.number}} {{cust.name}}</option>
+                                                        <option value="1" ng-repeat="cust in customers" class="{{disp}}">{{cust.number}} {{cust.name}}</option>
 
                                                        </select>
                                                        <input type="submit" value="Print and Add to Customer book"  ng-init="modal='modal'" data-dismiss="{{modal}}" ng-click="addBook(item)" style="background-color: #0b51c5" >
